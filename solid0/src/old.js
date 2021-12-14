@@ -7,6 +7,7 @@ class Car {
         this._miles = 0;
         this.FUEL_MILEAGE = 10;
         this.MAXIMUM_FUEL_CAPACITY = MAXIMUM_FUEL_CAPACITY;
+        this.engine = new Engine().engineStatus;
     }
     get miles() {
         return this._miles;
@@ -22,7 +23,7 @@ class Car {
         this._fuel = Math.min(fuel + this._fuel, this.MAXIMUM_FUEL_CAPACITY);
     }
     drive() {
-        if (this.engineStatus === false || this._fuel <= 0) {
+        if (this.engine === false || this._fuel <= 0) {
             //what I am doing here is a good principle called "failing early"
             // If you have some conditions you need to check, that will exclude most of the code in your function check that first
             // This prevents your "happy path" of code to be deeply indented.
