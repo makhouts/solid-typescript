@@ -21,7 +21,6 @@ class VariableDiscount {
 
 class FixedDiscount {
     private _value: number;
-
     constructor(value: number) {
         this._value = value;
     }
